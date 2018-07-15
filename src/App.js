@@ -18,6 +18,10 @@ const business = {
 const businesses = [business, business, business, business, business, business]
 
 class App extends Component {
+  searchYelp (term, location, sortBy) {
+    console.log(`Searching for ${term} in ${location} ordered by ${sortBy}.`)
+  }
+
   render () {
     return (
       <div className='App'>
