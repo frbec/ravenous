@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
-import BusinessList from './components/business-list/business-list';
-import SearchBar from './components/search-bar/search-bar';
+import React, { Component } from 'react'
+import './App.css'
+import BusinessList from './components/business-list/business-list'
+import SearchBar from './components/search-bar/search-bar'
 
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
@@ -13,20 +13,20 @@ const business = {
   category: 'Italian',
   rating: 4.5,
   reviewCount: 90
-};
+}
 
-const businesses = [business, business, business, business, business, business];
+const businesses = [business, business, business, business, business, business]
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
+      <div className='App'>
         <h1>ravenous</h1>
-        <SearchBar />
+        <SearchBar searchYelp={this.searchYelp} />
         <BusinessList businesses={businesses} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
