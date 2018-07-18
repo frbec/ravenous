@@ -11,6 +11,7 @@ class App extends Component {
     this.searchYelp = this.searchYelp.bind(this)
   }
   searchYelp (term, location, sortBy) {
+    if (!location) { location = 'anywhere' }
     Yelp.search(term, location, sortBy)
       .then(businesses => this.setState({ businesses: businesses }))
   }
@@ -20,7 +21,7 @@ class App extends Component {
       <div className='App'>
         <h1>ravenous</h1>
         <SearchBar searchYelp={this.searchYelp} />
-        <BusinessList businesses={this.businesses} />
+        <BusinessList businesses={this.state.businesses} />
       </div>
     )
   }
